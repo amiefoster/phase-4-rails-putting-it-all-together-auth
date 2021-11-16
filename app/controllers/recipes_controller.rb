@@ -22,7 +22,7 @@ class RecipesController < ApplicationController
     private
 
     def recipe_params
-        params.permit(:title, :instructions, :minutes_to_complete)
+        params.permit(:title, :instructions, :minutes_to_complete, :user_id).with_defaults(user_id: session[:user_id])
     end
 
 end
